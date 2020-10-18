@@ -1,0 +1,643 @@
+{
+	"info": {
+		"_postman_id": "a26d75e8-08cf-4548-96d3-450ebf1a6585",
+		"name": "Boilerplate Api",
+		"description": "> Api documentation for Avon Navidad project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Admin login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\":\"root\",\r\n    \"pwd\": \"root\"\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/auth/login/admin",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"auth",
+								"login",
+								"admin"
+							]
+						},
+						"description": "body:\r\n```\r\n{\r\n    user:string,\r\n    pwd:string\r\n}\r\n```"
+					},
+					"response": [
+						{
+							"name": "Admin login invalid err",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user\":\"root\",\r\n    \"pwd\": 123\r\n}"
+								},
+								"url": {
+									"raw": "https://localhost:5001/api/auth/login/admin",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"auth",
+										"login",
+										"admin"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 18 Oct 2020 03:57:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"invalid body for Admin role\",\n    \"statusCode\": 400,\n    \"ok\": false,\n    \"response\": null\n}"
+						},
+						{
+							"name": "Admin login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user\":\"root\",\r\n    \"pwd\": \"root\"\r\n}"
+								},
+								"url": {
+									"raw": "https://localhost:5001/api/auth/login/admin",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"auth",
+										"login",
+										"admin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 18 Oct 2020 03:56:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "auth_cookie=CfDJ8OycaUxjh-xMtpg8HFH-rgXewOiRh3jfe-uiHowJVBSLDolDHYOMrilkzJjMUeP0GOfLg7shB4eK8ajsHMTEuHrr-W8kM9pzO-rWvG9BO5exZCmfv8IJNban43EYsAGT_d2y56syS1JxRmTwmbU-pVk2Akp56D0lAANxqm8y_d_GgpkkZaoMH23VUeiE97-mXWQmdLvbBno-evPlwUyxNSgXmIAk0ItJmKLVhagWTC3nwAyTvJcfQZNtOm54wYQH2dV2qYPgYD-owpPp0h4QpG1K5mSMXsISBmrMNTHd_qNFKsWO5rJ7CVyU7gVjtwYObLPYEv6Lln1ijJoa0F0k-gqObokx1TB8KdU5uD3LknHM1ymtvtwdWPSREISAgquURiQX7MdTuQ_o3sNfz_EHA7k; expires=Sun, 18 Oct 2020 04:26:26 GMT; path=/; secure; samesite=lax; httponly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"you has been loged succesfully as Admin\",\n    \"statusCode\": 200,\n    \"ok\": true,\n    \"response\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "User login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\":\"root\",\r\n    \"pwd\": \"root\"\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/auth/login/user",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"auth",
+								"login",
+								"user"
+							]
+						},
+						"description": "body:\r\n```\r\n{\r\n    user:string,\r\n    pwd:string\r\n}\r\n```"
+					},
+					"response": [
+						{
+							"name": "User login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user\":\"root\",\r\n    \"pwd\": \"root\"\r\n}"
+								},
+								"url": {
+									"raw": "https://localhost:5001/api/auth/login/user",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"auth",
+										"login",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 18 Oct 2020 04:03:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "auth_cookie=CfDJ8OycaUxjh-xMtpg8HFH-rgXWwojwVb_usO-YAbhzln2Ko7gk4AFsDgYDgM6_-1Nh8Bf7R8oxYM4_km8GFkFU8UrdSUdf8wRDggPLZ3HMc6mqo17YTUhWTS3h0sM362OCsMq2QUn7fy_oYGoZOFc81_kEgcSFsjMJ7NPAWfjLeQDIqL_xweQSepCF3P1rZaDPoKwwLqH_-KZd8G-u3ssqI7hxvzx8dC-0kUOiH2AbKU1VLqSRL6x70Sm4cOcGCzOjUjnj6iN2z-jGWClVmGtGk7_cKR8XzU0nYV05TSwvsdE1GakqYZygur2yHswwdGhgfTP9n0LWrKoxOp_VS2TCIUjENF9wDQGIwoU0Yw1WnWrKJn1NyMFVIudKA8clAI1hJzI_Ejeabod5BZTR63qMyNY; expires=Sun, 18 Oct 2020 04:33:08 GMT; path=/; secure; samesite=lax; httponly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"you has been loged succesfully as User\",\n    \"statusCode\": 200,\n    \"ok\": true,\n    \"response\": null\n}"
+						},
+						{
+							"name": "User login invalid err",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user\":\"root\",\r\n    \"pwd\": 123\r\n}"
+								},
+								"url": {
+									"raw": "https://localhost:5001/api/auth/login/user",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"auth",
+										"login",
+										"user"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 18 Oct 2020 04:03:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"invalid body for User role\",\n    \"statusCode\": 400,\n    \"ok\": false,\n    \"response\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "refreh",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/auth/refresh/user",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"auth",
+								"refresh",
+								"user"
+							]
+						},
+						"description": "refresh session cookie.\r\n\r\nfor already loged users only, otherwise the response will have an error mesage and status code 401.\r\n\r\n`https://localhost:5001/api/auth/refresh/{role}`\r\n\r\n- Role parameter: `admin` | `user`\r\n\r\nthe response is successfully if loged user identity claim match with the role parameter in URL otherwise throw 401 sttus code"
+					},
+					"response": [
+						{
+							"name": "refreh admin",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:5001/api/auth/refresh/admin",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"auth",
+										"refresh",
+										"admin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 18 Oct 2020 04:12:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "auth_cookie=CfDJ8OycaUxjh-xMtpg8HFH-rgU4Q4iFhWNQh1INAWqhhxFUyszhn93yL0O_Dycc3yFsFLfOq2EKaA76kB5cHnK2xofrnrQQGNgGRkFK7dhS1o2SeUMTX6K91HWLsJTRySuwWRy-sXKtmhqWiQ13KN3Q0Qpgn9sjQjDun_ALgxX3q-y5bwkGZi1MM1PpDpFYXRmki__dnY2KiEtTVU1-Jgr8x6Vzv6xsG_habq3TcZCLW574nVVskKDsm0XojN-0EokizdE2-5-hYKccmjM6yu7SDyQNGHFHFJbkoGdu1IMEVcd08VmetqSz2Jd3r61KRgAVAjllRYOD_KNGJ4jJ7Mr0dxGWEoFeynOv1sMZ2rs5mxBsRjzG6xokEzH9wmHYPoc2TD-nUuaC3lF_BZwcUyYP6is; expires=Sun, 18 Oct 2020 04:42:20 GMT; path=/; secure; samesite=lax; httponly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"of couse you are an admin!\",\n    \"statusCode\": 200,\n    \"ok\": true,\n    \"response\": true\n}"
+						},
+						{
+							"name": "refreh user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:5001/api/auth/refresh/user",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"auth",
+										"refresh",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 18 Oct 2020 04:09:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "auth_cookie=CfDJ8OycaUxjh-xMtpg8HFH-rgVX892QxFUlO-fI4M-8ldA-d5m1Ok0pRRf7iyuEZeDd_nCItPnfBPVueCZvJrGk1A1Aki-H6Yy6KeJ-3-0TNOj2DrLVBuPkSUASzmup3n734_SHvKP0yIJPkptX2FGRihOTAvT6sfUDXGXAjydiNZvf9xTKOOCwEksi5FQVED4UwhrYjAtzcXKD26gptbHccLIHel_BVHe2e5udL0DbWdB-99llmr6PMtzx8xgVtjSLpWrH-wFb92DBqlPFEhilvWQGpLk50LTwgAtLwWFCXPkILCdBDStugSjatYKDSoMTQu0R0wLITBYHZv5KTV37JcLbPUkXsVZiwc1WTQT41xg9tCC019EYEYbrhq5EmgEbfFfk3jFvdZH9j0wzfJRJYis; expires=Sun, 18 Oct 2020 04:39:28 GMT; path=/; secure; samesite=lax; httponly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"of couse you are an user!\",\n    \"statusCode\": 200,\n    \"ok\": true,\n    \"response\": true\n}"
+						},
+						{
+							"name": "refreh without login",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:5001/api/auth/refresh/admin",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"auth",
+										"refresh",
+										"admin"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 18 Oct 2020 04:13:28 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "admin try to refresh as user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:5001/api/auth/refresh/user",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"auth",
+										"refresh",
+										"user"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 18 Oct 2020 04:12:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Sorry, only users here...\",\n    \"statusCode\": 403,\n    \"ok\": false,\n    \"response\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/auth/logout",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "logout",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:5001/api/auth/logout",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 17 Oct 2020 22:31:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "auth_cookie=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; secure; samesite=lax; httponly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"loged out\",\n    \"statusCode\": 200,\n    \"ok\": true,\n    \"response\": null\n}"
+						}
+					]
+				}
+			],
+			"description": "> Authentication methods and handlers",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
