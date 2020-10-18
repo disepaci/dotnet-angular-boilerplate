@@ -4,11 +4,25 @@ Boilerplate for projects using ASP.NET Core 3.1 and Angular.
 
 Enjoy it!
 
+
+# Build
+
+- just build the client with angular cli and then the .Net project. 
+
+- the angular bundle will be outputed at `API/wwwroot` and served as static resourse from API
+server.
+
+
+# Back / Front ends
+
 ## API
+
+the APi has a middelware to handle the redirection to angular bundle.
 
 - auth controller implemented
 - see api documentation importing
-`API_documentation_BoilerplateApi.postman_collection.json` file in postman
+  `API_documentation_BoilerplateApi.postman_collection.json` file in postman. as
+  recomendation you sould keep using and scalling this documentation.
 - in case of using databases, write the database initialization script in
   `sqlScripts.sql` file located in repo's root
 
